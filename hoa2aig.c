@@ -461,7 +461,7 @@ int main(int argc, char* argv[]) {
                 }
                 // one of the two should be non-NULL
                 // and there should be exactly one acceptance set!
-                assert(acc != NULL && noAccSig == 1);
+                assert(acc != NULL && noAcc == 1);
                 acceptance[acc[0]] = or(&andGates, acceptance[acc[0]], transCode);
             }
             // since the automaton is supposedly deterministic, we should only
@@ -572,7 +572,7 @@ int main(int argc, char* argv[]) {
     fprintf(stderr, "AIG structure created, now checking it!\n");
     const char* msg = aiger_check(aig);
     if (msg) {
-        fprintf(stderr, msg);
+        fprintf(stderr, "%s", msg);
         return 500;
     }
 #endif

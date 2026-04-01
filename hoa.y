@@ -32,6 +32,8 @@
 #include "simplehoa.h"
 #include "hoalexer.h"
 
+#define YYMAXDEPTH 100000
+
 // helper functions for the parser
 void yyerror(const char* str) {
     fprintf(stderr, "Parsing error: %s [line %d]\n", str, yylineno);
