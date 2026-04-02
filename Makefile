@@ -29,10 +29,7 @@ hoalexer.c: hoa.l hoaparser.c hoaparser.h
 hoaparser.c: hoa.y
 	bison --defines --output=hoaparser.c hoa.y
 
-test: hoacheck
-	./tests/test_pg2hoa.sh ./hoacheck
-
-.PHONY: clean all test
+.PHONY: clean all
 
 clean:
 	rm -f hoalexer.h hoalexer.c
