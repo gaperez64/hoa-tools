@@ -7,7 +7,7 @@ import sys
 
 def hoaAccSign(priority):
     if priority == 0:
-        return "f"
+        return "Inf(0)"
     rec = [""] * (priority + 1)
     rec[0] = "Inf(0)"
     for p in range(1, priority):
