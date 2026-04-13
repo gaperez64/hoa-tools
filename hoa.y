@@ -24,6 +24,13 @@
 
 /* C declarations */
 
+/* Raise the bison parser stack cap from the 10k default so that HOA
+ * files with thousands of states / transitions (e.g. the bulk outputs
+ * from generators/generate_large.py) can be parsed without hitting a
+ * premature "memory exhausted" error. 10M stack items is ~160MB worst
+ * case, which is plenty on any machine that can hold the input file. */
+#define YYMAXDEPTH 10000000
+
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
